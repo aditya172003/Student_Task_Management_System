@@ -1,0 +1,531 @@
+{
+	"info": {
+		"_postman_id": "4a3f4af7-8488-4a73-af92-797b04e95ac3",
+		"name": "Student_Task_Management_System",
+		"description": "The routes authorized to admin only",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22951744"
+	},
+	"item": [
+		{
+			"name": "Admin Routes",
+			"item": [
+				{
+					"name": "Register Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"admin\",\r\n    \"email\":\"admin@admin.com\",\r\n    \"password\":\"admin\",\r\n    \"phone\":\"1111111111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/admin/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@admin.com\",\r\n    \"password\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/admin/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Admin Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/admin/getadmin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"getadmin"
+							]
+						},
+						"description": "Returns the Profile of current Admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Profile update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"admin\",\r\n    \"email\":\"admin@admin.com\",\r\n    \"password\":\"admin\",\r\n    \"phone\":\"1111111111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/admin/updateprofile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"updateprofile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"student\",\r\n    \"email\":\"student@student.com\",\r\n    \"password\":\"student\",\r\n    \"phone\":\"1111111111\",\r\n    \"department\":\"CS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/admin/student",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"student"
+							]
+						},
+						"description": "Only Authorized user can register new Student"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Students",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/admin/students",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"students"
+							]
+						},
+						"description": "Returns the all registered students"
+					},
+					"response": []
+				},
+				{
+					"name": "Assign task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"studentId\":\"65943f6a78b69479c1d8e30a\",\r\n    \"title\":\"Task 0\",\r\n    \"description\":\"Task description 0\",\r\n    \"deadline\":\"2-11-2023\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/admin/assigntask",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"assigntask"
+							]
+						},
+						"description": "Only Authorized admin can assign task to registered user"
+					},
+					"response": []
+				},
+				{
+					"name": "Update student profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"student\",\r\n    \"email\":\"student@student.com\",\r\n    \"password\":\"student\",\r\n    \"phone\":\"1111111111\",\r\n    \"department\":\"CS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/admin/student",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Student profile",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/admin/student/65943c98d66c9efbb082c318",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"student",
+								"65943c98d66c9efbb082c318"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Student task",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/admin/task?id=65943f6a78b69479c1d8e30a&status=true",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"task"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "65943f6a78b69479c1d8e30a"
+								},
+								{
+									"key": "status",
+									"value": "true"
+								}
+							]
+						},
+						"description": "Filter tasks assigned to student accoring to query parameters set"
+					},
+					"response": []
+				},
+				{
+					"name": "get Due tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/admin/duetasks/65943f6a78b69479c1d8e30a",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"duetasks",
+								"65943f6a78b69479c1d8e30a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Student all tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/admin/studenttask/65943f6a78b69479c1d8e30a",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"studenttask",
+								"65943f6a78b69479c1d8e30a"
+							]
+						},
+						"description": "Returns the all out dated tasks"
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/admin/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student Routes",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"student@student.com\",\r\n    \"password\":\"student\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/student/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/student/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/student/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/student/tasks",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tasks Filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/student/tasksfilter?status=true",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"tasksfilter"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "incomplete tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/student/incompletetask",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"incompletetask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Due tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/student/duetasks",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"duetasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Task Status",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/student/updatestatus?id=65944348c3f36e6b3ab750d5&status=true",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"updatestatus"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "65944348c3f36e6b3ab750d5"
+								},
+								{
+									"key": "status",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Routes authorized to student only"
+		}
+	]
+}
